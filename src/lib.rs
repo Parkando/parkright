@@ -3,14 +3,6 @@ use std::sync::Arc;
 use base64::{Engine, prelude::BASE64_STANDARD};
 use reqwest::header::{HeaderMap, HeaderValue};
 
-#[allow(dead_code)]
-mod test {
-
-    pub const USER: &str = "parkando-api-test";
-    pub const PASSWORD: &str = "zMQJq5N&";
-    pub const URL: &str = "https://test.parkright.se/";
-}
-
 mod error;
 mod settlement;
 mod ticket;
@@ -18,6 +10,9 @@ mod ticket;
 pub use {error::Error, settlement::Settlement, ticket::Ticket};
 
 const PROD_URL: &str = "https://parkright.se/";
+
+#[allow(dead_code)]
+const TEST_URL: &str = "https://test.parkright.se/";
 
 #[derive(Clone)]
 pub struct Client {
