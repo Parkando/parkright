@@ -22,10 +22,10 @@ pub struct Client {
 
 impl Client {
     pub fn from_env() -> Self {
-        let username = std::env::var("PARKRIGHT_USERNAME").expect("PARKRIGHT_USERNAME");
-        let password = std::env::var("PARKRIGHT_PASSWORD").expect("PARKRIGHT_PASSWORD");
-
-        println!("{username}:{password}");
+        let username =
+            std::env::var("PARKRIGHT_USERNAME").expect("env var PARKRIGHT_USERNAME not set");
+        let password =
+            std::env::var("PARKRIGHT_PASSWORD").expect("env var PARKRIGHT_PASSWORD not set");
 
         Self::new(username, password)
     }
@@ -34,8 +34,6 @@ impl Client {
         let auth_key =
             BASE64_STANDARD.encode(format!("{}:{}", username.as_ref(), password.as_ref()));
         let auth_header_value = format!("Basic {auth_key}");
-
-        println!("{auth_header_value}");
 
         let mut headers = HeaderMap::new();
 
