@@ -2,6 +2,12 @@
 name = "parkright"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+documentation = "https://docs.rs/parkright"
+repository = "https://github.com/Parkando/parkright"
+description = """
+Wrapper around Parkright Settlement API
+"""
 
 [dependencies]
 base64 = "0.22.1"
