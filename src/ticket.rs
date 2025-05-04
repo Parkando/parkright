@@ -15,5 +15,5 @@ pub struct Ticket {
 
     // @TODO: this should be a DateTime
     pub print_time: String,
-    pub settlement_id: u64,
+    pub settlement_id: i64,
 }

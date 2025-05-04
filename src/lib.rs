@@ -96,7 +96,7 @@ impl Client {
         Ok(res.settlements)
     }
 
-    pub async fn fetch_tickets(&self, settlement_ids: &[u64]) -> Result<Vec<Ticket>, Error> {
+    pub async fn fetch_tickets(&self, settlement_ids: &[i64]) -> Result<Vec<Ticket>, Error> {
         if settlement_ids.is_empty() {
             return Ok(vec![]);
         }
