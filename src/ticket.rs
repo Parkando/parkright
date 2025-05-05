@@ -1,3 +1,5 @@
+time::serde::format_description!(date_format, Date, "[year]-[month]-[day]");
+
 #[derive(Debug, serde::Deserialize, serde::Serialize)]
 #[serde(rename_all = "PascalCase")]
 pub struct Ticket {
@@ -14,6 +16,7 @@ pub struct Ticket {
     pub place_name: String,
 
     // @TODO: this should be a DateTime
-    pub print_time: String,
+    #[serde(with = "time::serde::rfc3339")]
+    pub print_time: time::OffsetDateTime,
     pub settlement_id: i64,
 }

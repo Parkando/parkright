@@ -7,7 +7,7 @@ async fn main() {
     println!("Fetched {} settlements", settlements.len());
 
     for settlement in settlements {
-        println!("Fetching settlement {}", settlement.id);
+        println!("Fetching settlement {:#?}", settlement);
 
         client
             .fetch_tickets(&[settlement.id])
